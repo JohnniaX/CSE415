@@ -1,0 +1,15 @@
+TODO:
+X    Implement a deep equals method
+X    Provide a print out of the board
+X    Create a hash code
+X    Copy the state
+X    Check if the number can be placed there
+X        Check inside the subgrid
+X        Check along the row
+X        Check along the column
+X    Actually place the number
+X    Create a goal test: E.g. all spots are filled
+X    Have the operator class
+    Create an initial state
+    Create all of the operators, should be 729, 81 blocks with 9 possibilites per each block
+        However we can elimate operators for blocks that are already filled in, drastically reducing the number of operators (9 per block removed)

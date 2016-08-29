@@ -1,0 +1,24 @@
+>>> three_x_cubed_plus_5(2)
+29
+>>> three_x_cubed_plus_5(5)
+380
+>>> three_x_cubed_plus_5(29)
+73172
+>>> mystery_code("abc Iz th1s Secure? n0, no, 9!", 17)
+'RST zQ KY1J jVTLIV? E0, EF, 9!'
+>>> mystery_code("What could this possibly be?", 9)
+'fQJC LXDUM CQRB YXBBRKUH KN?'
+>>> mystery_code("It's a cesear cipher, Duh !!221211", 13)
+"vG'F N PRFRNE PVCURE, qHU !!221211"
+>>> quadruples([2, 5, 1.5, 100, 3, 8, 7, 1, 1])
+[[2, 5, 1.5, 100], [3, 8, 7, 1], [1]]
+>>> quadruples([62, 21, 0, 2, 6, 5, 8])
+[[62, 21, 0, 2], [6, 5, 8]]
+>>> quadruples([62, 21, 0, 2, 6, 5, 8, 96, 84, 97, 23])
+[[62, 21, 0, 2], [6, 5, 8, 96], [84, 97, 23]]
+>>> past_tense(['program', 'debug', 'execute', 'crash', 'repeat', 'eat'])
+['programmed', 'debugged', 'executed', 'crashed', 'repeated', 'ate']
+>>> past_tense(['fly', 'cry', 'die'])
+['flyed', 'cryed', 'died']
+>>> past_tense(['hop', 'skip', 'jump'])
+['hopped', 'skipped', 'jumped']

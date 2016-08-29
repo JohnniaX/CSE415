@@ -1,0 +1,5 @@
+Retrospective for Josh: Created some of the functions contained in the <COMMON_CODE> block, including the copy state, and can move, along with the dependencies of the function.
+
+Retrospective for Ian: Created the operator class, transcribed the puzzles into INITIAL_STATE formats, and wrote some of the heuristics. Also made corrections to certain functions that weren't working correctly.
+
+Josh: I learned that without a good heuristic, the runtime of A* can still be excessive. I think that with some simple checks the sudoku solver could be much better, but then it wouldn't solely be a A* solver. E.g. how many numbers can go in this spot, and if the answer is one, place it there. The hardest part in my opinion is coming up with a heuristic that isn't resource intensive and allows the problem to be solved in a timely manner, something that I personally found difficult.

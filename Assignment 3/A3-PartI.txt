@@ -1,0 +1,8 @@
+Josh Johnson
+CSE 415
+Due 4/20/16
+       Assignment #3
+Part 1
+1) Tic tac toe has 24 distinct states after 5 moves have been made.
+2) An expression to represent the number of distinct states that can be achieved after 6 moves is the number of spots left * number of spots left - 1 * … * number of spots left - 5. In this case, that is 21 * 20 * 19 * 18 * 17 * 16 which equals 39070080.
+3) n + (n ** 2 - 1) + (n / 2)

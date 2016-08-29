@@ -1,0 +1,233 @@
+
+<!-- saved from url=(0068)https://courses.cs.washington.edu/courses/cse415/16sp/assign/A3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+Assignment 3 for CSE 415 (Spring 2016)
+</title>
+<link rel="stylesheet" href="./Assignment 3 for CSE 415 (Spring 2016)_files/mystyle.css">
+</head>
+
+
+<body><center>
+
+<table cellpadding="7" width="500">
+<tbody><tr><td><font size="+3" face="Helvetica">
+Assignment 3: Counting States and Working with A* Search
+</font></td></tr>
+
+<tr><td><font size="+1" face="Helvetica">
+CSE 415: Introduction to Artificial Intelligence<br>
+The University of Washington, Seattle, Spring 2016
+</font></td></tr>
+
+<tr><td><img src="./Assignment 3 for CSE 415 (Spring 2016)_files/bar.gif" width="500" height="1"></td></tr>
+
+<tr><td>
+
+The reading for this assignment is 
+<a href="https://www.cs.washington.edu/education/courses/cse415/16sp/materials/EAIP-Part3.pdf">
+<i>Search</i></a>
+in <i>The Elements of Artificial Intelligence with Python</i>.
+
+<br>
+</td></tr>
+
+<tr><td>
+Due Thursday, April 21 (changed from Wednesday, April 20) through
+Catalyst CollectIt 
+at 11:59 PM.  
+
+
+<br>&nbsp;<br>
+</td></tr>
+
+<tr><td><b>Part I. Written Answers (25 points)</b>.
+    <p> This part of the assignment is concerned with the sizes of state spaces
+      for search problems.  The so-called "combinatorial explosion" can manifest
+      itself in a variety of ways. Understanding how some states may be double counted
+      by simple enumeration techniques can be important in applying state-space search.
+      For example, if a large proportion of states get double counted, it may be worth
+      implementing functionality to eliminate the double counting.
+</p><ol>
+<li>"Tic-Tac-Toe" (5 points)
+  <p>
+    How many distinct states are possible in a game of Tic-Tac-Toe after 5 moves
+    have been made (3 Xs and 2 Os)?  Consider two states to be distinct even if
+    rotating the board by 90 degrees or 180 degrees, or flipping the board
+    vertically or horizontally, turns one state into the other.
+    However if the same arrangement of the board can be reached by multiple
+    move sequences, still consider that to be just one state.
+</p></li>
+
+<li>"Tri-Tac-Toe" (10 points)
+<p>
+  Let us define the game of Tri-Tac-Toe as a game for 3 players, X, Y, and Z.
+The object is to get 3 in a row.  However, they play on a 3D board that is 3 by 3 by 3.
+They take turns in a round-robin protocol.
+Give an expression for the number of distinct states that can be achieved after 6 moves
+and evaluate it to a number.
+Such a state should have 2 X's, 2 Y's, and 2 Z's on the board, filling six of the
+27 available voxels.
+You may assume that 2 states are distinct even if one can be matched to another by some
+rotation of the cube.
+
+  </p></li>
+<li>Purple Paperweights (10 points)
+<p>
+The Purple Paperweight Company sells a line of paperweights that come in the following
+sizes: 2 cm by 2 cm, 4 cm by 4 cm, 6 cm by 6 cm, etc.  Thus a typical paperweight is of
+size n by n, measured in centimeters.  Its design is an array of purple and gold squares
+each of size 1 centimeter on a size.  The underside is just black felt, with no pattern.
+
+</p><p>
+The company promotes the paperweights by explaining how great a variety of patterns they
+come in, because the arrangements of purple vs gold in the grid positions are more or
+less random.  Give a formula for the number of distinct paperweights having size n by n.
+This formula should consider the possibility of various symmetries and double-counting
+situations, and it should not do any double counting. 
+
+</p><p>
+Hints: (1) patterns with 4-way (90-degree) rotational symmetry are not double counted;
+patterns with 2-way (180-degree) rotational symmetry, but not 4-way symmetry,
+ are double counted; other patterns are quadruple counted.
+(2) try working out all the patterns for n=2 and use that as a check on your formulas.
+
+
+  </p></li>
+</ol>
+
+<br>
+</td></tr>
+
+
+<tr><td><b>Part II. 75 Points</b>.
+
+The Python code for a program that performs iterative depth-first search to solve
+a Towers of Hanoi puzzle is given in the two files
+<a href="https://www.cs.washington.edu/education/courses/cse415/15sp/materials/ItrDFS.py">ItrDFS.py</a>
+and
+<a href="https://www.cs.washington.edu/education/courses/cse415/15sp/materials/TowersOfHanoi.py">TowersOfHanoi.py</a>
+Implement the following
+<ol>
+<li>
+Breadth-First Search (10 points).
+<p>
+Using ItrDFS.py as a guide, create a program ItrBreadthFS.py that uses
+breadth-first search rather than depth-first search to solve the Towers of Hanoi puzzle.
+Show the states on a shortest solution path for the Towers of Hanoi puzzle with 4 disks.
+  </p></li>
+<li>
+Basic 8 Puzzle Formulation  (20 points).
+<p>
+Create a file BasicEightPuzzle.py
+that provides the same kinds of problem elements that the TowersOfHanoi.py file provides:
+metadata, initial state, operators, and a few utility functions such as HASHCODE and
+DEEP_EQUALS.
+
+Show that it can solve some easy instances of the puzzle, such as instances requiring only
+three or four moves.  
+Here are four instances to try:
+</p><pre># puzzle0:
+CREATE_INITIAL_STATE = lambda x: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+# puzzle1a:
+CREATE_INITIAL_STATE = lambda x: [1, 0, 2, 3, 4, 5, 6, 7, 8]
+# puzzle2a:
+CREATE_INITIAL_STATE = lambda x: [3, 1, 2, 4, 0, 5, 6, 7, 8]
+# puzzle4a:
+CREATE_INITIAL_STATE = lambda x: [1, 4, 2, 3, 7, 0, 6, 8, 5]
+</pre>
+
+  </li>
+<li>
+A-Star Implementation (15 points).
+<p>
+Implement a search program AStar.py that, like ItrDFS.py, will accept as a command-line
+argument the name of a problem template such as EightPuzzle but also accepts (a) the name
+of a heuristic evaluation function to use in the AStar search
+and (b) the name of a puzzle instance file that contains a particular initial state.
+For example
+
+</p><pre>python3 AStar.py EightPuzzleWithHeuristics h_euclidean puzzle2a.py
+</pre>
+The contents of puzzle2a.py would have this form:
+<pre class="mycode">CREATE_INITIAL_STATE = lambda x: [3, 1, 2, 4, 0, 5, 6, 7, 8]
+</pre>
+         
+  </li>
+<li>
+Implementing and Comparing Heuristics (30 points).
+<p>
+
+Implement four heuristic evaluation functions for the 8 Puzzle: h_euclidean(s),
+h_hamming(s), h_manhattan(s), and h_custom(s).
+The first should compute the euclidean distance for each tile from its location in
+state s to its location in the goal state.  Then it should add up these distances
+and return that sum.   The second function should determine the number of tiles that,
+in state s, are not where they should end up in the goal state.
+The third function should find, for each tile, how many rows it is away from its goal state row
+plus how many columns it is away from its goal state column, and it should add those
+distances for each of the tiles.  When computing these distances, include the empty square
+as if it were a virtual tile (tile number 0). The fourth heuristic is one that you should
+design yourself.  You should design it to be admissible.  Ideally, it will outperform
+the others.  However, it might simply offer a variation or combination of the others.
+
+</p><p>
+Include these in a new version of your 8 puzzle formulation: EightPuzzleWithHeuristics.py.
+Define the actual functions at the end of the COMMON-CODE section, but create new couple of
+lines of code
+at the end of the file as follows.
+</p><pre class="mycode">HEURISTICS = {'h_euclidean': h_euclidean, 'h_hamming':h_hamming,
+    'h_manhattan':h_manhattan, 'h_custom':h_custom}
+</pre>
+
+<p>
+Compare the performance of these heuristics on each of the example puzzles (given below).
+For each puzzle-heuristic pair,
+report whether the puzzle was successfully solved and also
+report the count of states processed (taken off of OPEN and put on CLOSED).
+Put this information into a table.
+If it takes more than 30 seconds to solve a particular problem with a particular
+heuristic then note that; you may abort such runs.
+  </p></li>
+</ol>
+ Example puzzles:
+<pre class="mycode">puzzle10a.py:
+CREATE_INITIAL_STATE = lambda: [4, 5, 0, 1, 2, 3, 6, 7, 8]
+
+puzzle12a.py:
+CREATE_INITIAL_STATE = lambda: [3, 1, 2, 6, 8, 7, 5, 4, 0]
+
+puzzle14a.py:
+CREATE_INITIAL_STATE = lambda: [4, 5, 0, 1, 2, 8, 3, 7, 6]
+
+puzzle16a.py:
+CREATE_INITIAL_STATE = lambda: [0, 8, 2, 1, 7, 4, 3, 6, 5]
+
+</pre>
+Please put your results for these comparisons (as mentioned, in the form of a table) in 
+a file <b>results.txt</b>.
+</td></tr>
+<tr><td><b>What to Turn In</b>
+
+<p>
+Turn in a file A3-PartI.txt and all the files that you create for Part II.
+Your A3-PartI.txt file should contain your name and the answers to the questions in Part I.
+Your Python files for Part II should begin with a multiline string that gives, on the first line,
+your name, and on the next lines the status of the program represented by the file.
+</p>
+
+</td></tr>
+
+<tr><td><b>Updates and Corrections</b>
+<p>
+If necessary, updates and corrections will be posted here and/or mentioned in class or on
+GoPost.
+</p>
+
+</td></tr>
+</tbody></table>
+</center>
+
+
+
+
+</body></html>

@@ -1,0 +1,54 @@
+0A: Ron: My name is Ron. You don't need to know my last name.
+I live in this house and you're standing on my porch.
+I was programmed by Josh Johnson and if you've got a problem with
+that, send him an email on that phone of yours at joshj004@uw.edu
+
+0B: Bunsen: My name is Dewar Bunsen, and I am a scientist.
+I was programmed by Ian McDermott. If you think my experiments need improvement, contact him at ianm13@uw.edu.
+Is there something you need?
+
+1A: Ron: I will admit, I am interested. Tell me more.
+
+1B: Bunsen: There's not much left to say about that.
+
+2A: Ron: If you won't talk, I will. What keeps you busy?
+
+2B: Bunsen: I don't really know what to do when I won't talk you will what keeps I busy happens.
+
+3A: Ron: Do you only ever talk about yourself?
+
+3B: Bunsen: I have assistants who only ever talk about yourself for me.
+
+4A: Ron: Excuse me for trying to talk to you. Hmph.
+
+4B: Bunsen: I'm thinking of formulating an experiment around only ever talk about yourself. Can you tell me more about it?
+
+5A: Ron: Not in this community you won't. Experiments can only bring bad things.
+
+5B: Bunsen: That sounds interesting. Tell me about this community I won't experiments can only bring bad things.
+
+6A: Ron: So?
+
+6B: Bunsen: There's not much left to say about that.
+
+7A: Ron: If you won't talk, I will. What keeps you busy?
+
+7B: Bunsen: I don't really know what to do when I won't talk you will what keeps I busy happens.
+
+8A: Ron: Do you only ever talk about yourself?
+
+8B: Bunsen: I have assistants who only ever talk about yourself for me.
+
+9A: Ron: Excuse me for trying to talk to you. Hmph.
+
+9B: Bunsen: I have to be constantly alert here.
+
+10A: Ron: You don't know what it means to be alert.
+
+10B: Bunsen: Maybe I can formulate an experiment to determine what it means to be alert.
+
+# COMMENTS BELOW
+There wasn't a memory feature, cycle feature, or random feature that came up organically.
+Had the other conversing partner not said anything or lawn, that would've activated the cycle feature.
+Had the other conversing partner brought up 'billy' the memory feature would've been activatged.
+Had the other conversing partner said 'trouble' the random feature would've activated.

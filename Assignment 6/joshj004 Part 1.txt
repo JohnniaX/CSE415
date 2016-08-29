@@ -1,0 +1,79 @@
+Josh Johnson
+CSE 415
+Assignment 6: Part I
+
+Question 1
+Basic Information for entire question
+										 Total: 100 Fish
+										/				\
+						1+ caught: 20 Fish				 None caught: 80 Fish
+						/				\				/	  				 \
+					   /			 	 \			   /					  \
+					  /					  \	  Just stopped raining: 2 Times   Didn't just stop raining: 78 Times
+Just stopped raining: 5 Fish	Didn't just stop raining: 15 Fish
+
+1) The probability of catching a fish in a given 10 minute attempt is 20/100 or 1/5.
+2) The probability that it has just stopped raining given that at least 1 fish was caught is 5/20 or 1/4.
+3) The probability that it has just stopped raining given that no fish were caught is 2/80 or 1/40.
+4) P(Catching 1+ fish | sr) = P(sr | Catching 1+ fish) * P(Catching 1+ fish) / P(sr)
+							= 1/4 * 1/5 / 7/100
+							= 1/20 / 7/100
+							= 5/7
+5)
+	Caught	|	Raining	|	Joint Prob.
+	--------------------------------------
+	Fish	|	Stopped |	0.05
+	Fish	| 	Other 	| 	0.15
+	None	| 	Stopped | 	0.02
+	None	| 	Other 	| 	0.78
+6)
+	i) 	F: {fish, none} = {20, 80}
+	ii) W: {stopped raining, other} =  {7, 93}
+	
+					|	Fish	| 	None	| Row Totals
+	-------------------------------------------------------
+	Stopped Raining |	0.05	|	 0.78	|	  0.83
+	-------------------------------------------------------
+	Other 			|	0.15	| 	 0.02 	|	  0.17
+	-------------------------------------------------------
+	Column Totals 	|	0.20	|	 0.80	|     1
+	
+	I'd say that the two variables are independent.
+	
+Question 2
+1) Number of policies: 5
+	i)		Exit current room
+	ii)		Alternative action
+	iii)	Remain as is
+	iv)		Get Ambushed
+	v)		Go Kaput
+	
+2)
+	K	| Dormitory		 |	Lavatory	 |	Pantry		 | Mess Hall		| Ambushed	| Kaput
+		| X   | Y  | Z 	 |  X  |  Y |  Z | X  |  Y | Z   |  X |  Y | Z      | 			|	
+	----------------------------------------------------------------------------------------
+	0	| 0	  |0   | 0	 |	0  | 0  | 0	 | 0  | 0  | 0	 | 0  | 0  | 0		| 	  0		| 	0
+	----------------------------------------------------------------------------------------
+	1	| 0	  | 0  | 0	 |	4  | 4  | 4	 | 10 | 10 | 10	 | 2  | 2  | 2		| 	-50		| 	0
+	----------------------------------------------------------------------------------------
+	2	| 4.2 |4.8 |-12.5|   9 | 6  | -8 |4.8 |4.2 |-1.25| 9  | 6  | -10.25	| 	-50		| 	0
+	----------------------------------------------------------------------------------------
+	3	|13.5 |13.5|-8.9 | 7.2 |7.2|-5.75|13.5|13.5|-8.9 |7.2 | 7.2| -5.75	| 	-50		| 	0
+	-----------------------------------------------------------------------------------------
+	4	|10.8 |10.8| -2	 |20.3 |20.3|-7.1|10.8|10.8| -2	 |20.3|20.3| -7.1	| 	-50		| 	0
+	-----------------------------------------------------------------------------------------
+	5	|30.5 |30.5|-4.4 |16.2 |16.2| 2.7|30.5|30.5| -4.4|16.2|16.2|  2.7	| 	-50		| 	0
+	
+3)
+	State		| Recommended Action
+	---------------------------------
+	Dormitory	|	Y
+	---------------------------------
+	Lavatory	|	Y
+	---------------------------------
+	Pantry		|	Y
+	---------------------------------
+	Mess Hall	|	Y
+	
+
+	
